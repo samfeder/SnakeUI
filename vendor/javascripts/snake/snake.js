@@ -1,4 +1,5 @@
 var _ = require('underscore')
+
 var Coords = require("./coords")
 var Board = require("./board")
 

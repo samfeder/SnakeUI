@@ -1,18 +1,28 @@
 function Board (snake) {
   this.snake = snake;
-  this.apples = []
+  this.apples = this.generateApples()
+  this.grid = this.generateBoard();
 }
 
-Board.APPLES = 5
+Board.APPLES = 5;
+Board.DIMENSIONS = 10;
 
 Board.prototype.generateApples = function() {
-  for (var i = 0; i < _.uniq(this.apples).length; i++){
-    this.apples.push([Math.floor(Math.random()*10),
-                      Math.floor(Math.random()*10)])
+  var apples = [];
+  while (_.uniq(apples).length < Board.APPLES) {
+    apples.push([Math.floor(Math.random()*10),
+                Math.floor(Math.random()*10)])
   }
-  this.apples = _.uniq(this.apples)
+  return _.uniq(apples)
 }
 
-Board.prototype.generateBoard = function(){}
+Board.prototype.generateBoard = function(){
+  for (var i = 0; i < board.DIMENSIONS; i++) {
+    for (var j = 0; j < board.DIMENSIONS; j++) {
+      [i]
+    }
+  }
+
+}
 
 module.exports = Board;
